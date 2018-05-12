@@ -22,6 +22,8 @@ mongoose.connect(dbConfig.url).then(() => {
   process.exit();
 });
 
+/* hello */
+
 /* simple route */
 app.get('/', (req, res) => {
   res.json({"message": "Welcome to your dota 2 favorites heroes"});
