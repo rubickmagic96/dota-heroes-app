@@ -1,10 +1,11 @@
 const Hero = require('../models/hero.models.js');
 
 exports.add = (req, res) => {
-  if (!req.body.content) {
-    return res.status(400).send({
-      message: 'Hero content cannot be empty'
-    });
+  if (!req.body.name || !req.body.nickname || !req.body.type ||
+      !req.body.base_health || !req.body.base_mana || !req.body.base_armor) {
+      return res.status(400).send({
+        message: 'Hero content cannot be empty'
+      });
   }
 
   const hero = new Hero({
